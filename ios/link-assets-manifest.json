@@ -1,0 +1,21 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "app/assets/font/Comic_Book.otf",
+      "sha1": "bd4746e10c5272f28941fe79e5be13463dbdbab4"
+    },
+    {
+      "path": "app/assets/font/Comic_Book_Bold.otf",
+      "sha1": "7a773d84d59ce768d08598cea9579bc852649c31"
+    },
+    {
+      "path": "app/assets/font/Comic_Book_Bold_Italic.otf",
+      "sha1": "7ebeca5541ce8b803631813427b57f8049af7125"
+    },
+    {
+      "path": "app/assets/font/Comic_Book_Italic.otf",
+      "sha1": "98ab6f780c29dcae4324fa3f007c495cb0a3906d"
+    }
+  ]
+}
