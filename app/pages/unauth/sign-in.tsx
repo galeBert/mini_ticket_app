@@ -6,7 +6,7 @@ import {
   Keyboard,
   Image,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {useAuth} from '../../context/auth';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import ComicText from '../../components/comic-book';
@@ -16,7 +16,12 @@ import {Link} from '@react-navigation/native';
 import {icons} from '../../constant';
 
 export default function SignIn() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState<{message: string; field: string}>();
+
   const {login} = useAuth();
+  console.log({error});
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -37,10 +42,23 @@ export default function SignIn() {
             {/* input container */}
             <View className="flex flex-col space-y-3">
               <View>
-                <InputField placeholder="E-mail" />
+                <InputField
+                  onChangeText={text => setEmail(text)}
+                  placeholder="E-mail"
+                  errorMessage={
+                    error?.field === 'email' ? error.message : undefined
+                  }
+                />
               </View>
               <View>
-                <InputField placeholder="Password" secureTextEntry />
+                <InputField
+                  onChangeText={text => setPassword(text)}
+                  placeholder="Password"
+                  secureTextEntry
+                  errorMessage={
+                    error?.field === 'password' ? error.message : undefined
+                  }
+                />
               </View>
               <View className="flex w-full items-end">
                 <TouchableOpacity className=" flex justify-end">
@@ -56,13 +74,26 @@ export default function SignIn() {
               <View className="space-y-3 flex flex-col items-center">
                 <Button
                   className="w-full"
-                  disabled
-                  onPress={login}
+                  disabled={!email.length || !password.length}
+                  onPress={async () => {
+                    try {
+                      const res = await login({email, password});
+                      if (!res.ok) {
+                        const errorData = await res.json();
+                        setError({
+                          message: errorData?.message.message,
+                          field: errorData.message.field,
+                        });
+                      }
+                    } catch (err) {
+                      console.log(err);
+                    }
+                  }}
                   title="Masuk"
                 />
                 <Link
                   className="text-lg text-center w-full text-general-200 mt-10"
-                  to="/sign-up">
+                  to="/signUp">
                   <Text className="text-sm text-neutral-500 font-normal">
                     Belum punya akun?{' '}
                   </Text>

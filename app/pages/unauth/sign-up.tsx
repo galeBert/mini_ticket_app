@@ -47,15 +47,10 @@ export default function SignUp() {
             <View className="flex flex-col space-y-4">
               {/* button container */}
               <View className="space-y-3 flex flex-col items-center">
-                <Button
-                  className="w-full"
-                  disabled
-                  onPress={login}
-                  title="Masuk"
-                />
+                <Button className="w-full" disabled title="Masuk" />
                 <Link
                   className="text-lg text-center w-full text-general-200 mt-10"
-                  to="/sign-in">
+                  to="/signIn">
                   <Text className="text-sm text-neutral-500 font-normal">
                     Sudah punya akun?{' '}
                   </Text>
