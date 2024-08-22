@@ -45,7 +45,7 @@ export default function Button({
         className={`
        text-[#F8F8F8] font-medium
        ${getTextVariantStyle(textVariant)}
-      ${bgVariant === 'outline' ? 'text-black-100' : ''}
+      ${bgVariant === 'outline' ? 'text-primary-text' : ''}
       `}>
         {title}
       </Text>

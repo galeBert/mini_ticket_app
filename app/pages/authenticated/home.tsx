@@ -1,33 +1,20 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  FlatList,
-  ScrollView,
-  Image,
-  Pressable,
-} from 'react-native';
+import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
 import React from 'react';
 import {useAuth} from '../../context/auth';
-import Button from '../../components/button';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {posts} from '../../constant';
-import {
-  NavigationAction,
-  NavigationProp,
-  useNavigation,
-} from '@react-navigation/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../route';
+import Card from '../../components/card';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'home'>;
 export default function Home({navigation}: Props) {
   const {logout} = useAuth();
 
   return (
-    <SafeAreaView>
+    <SafeAreaView className="bg-white">
       <FlatList
-        className="px-5 space-y-3"
+        className="px-5"
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={{
           paddingBottom: 100,
@@ -35,23 +22,16 @@ export default function Home({navigation}: Props) {
         data={posts}
         renderItem={({item}) => {
           return (
-            <TouchableOpacity
-              onPress={() => {
-                navigation.navigate('detail');
+            <Card
+              data={item}
+              onClick={() => {
+                navigation.navigate('detail', {
+                  postId: item.id,
+                  title: item.title,
+                });
               }}
-              className="h-[300px] mb-2 space-y-2 w-full">
-              <Image
-                className="w-full rounded-md h-[212px]"
-                resizeMode="cover"
-                source={item.image}
-              />
-              <View>
-                <Text className="text-base leading-[26px] font-semibold text-black-100">
-                  {item.title}
-                </Text>
-                <Text>{item.date}</Text>
-              </View>
-            </TouchableOpacity>
+              key={item.id}
+            />
           );
         }}
       />

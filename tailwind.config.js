@@ -12,9 +12,11 @@ module.exports = {
       },
       colors: {
         transparent: 'transparent',
-
-        black: {
-          100: '#020202'
+        primary: {
+          text: '#020202'
+        },
+        secondary: {
+          text: '#959697'
         },
         neutral: {
           200: '#D5D5D5',
