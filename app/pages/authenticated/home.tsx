@@ -27,7 +27,6 @@ export default function Home({navigation}: Props) {
               onClick={() => {
                 navigation.navigate('detail', {
                   postId: item.id,
-                  title: item.title,
                 });
               }}
               key={item.id}

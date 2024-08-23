@@ -18,6 +18,8 @@
 		3E98124B20DD45E3A29F8BF0 /* Comic_Book_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E643FAEFE80B449687EBE4D3 /* Comic_Book_Bold.otf */; };
 		85FDCE614F534CDEB57468AA /* Comic_Book_Bold_Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9CE1B9AE8E949E783E7E7DC /* Comic_Book_Bold_Italic.otf */; };
 		52036FDE3AA242B99B0073B8 /* Comic_Book_Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 375AA57EC0FB4D42834D65A2 /* Comic_Book_Italic.otf */; };
+		2AEE9BEDE3C94D6C9F60B624 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FC3FBC582AB495BA19A82E6 /* BootSplash.storyboard */; };
+		B0F3F07CD5084CE6BD1A2F71 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB9E50BAAA744EB185C76C50 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		E643FAEFE80B449687EBE4D3 /* Comic_Book_Bold.otf */ = {isa = PBXFileReference; name = "Comic_Book_Bold.otf"; path = "../app/assets/font/Comic_Book_Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		D9CE1B9AE8E949E783E7E7DC /* Comic_Book_Bold_Italic.otf */ = {isa = PBXFileReference; name = "Comic_Book_Bold_Italic.otf"; path = "../app/assets/font/Comic_Book_Bold_Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		375AA57EC0FB4D42834D65A2 /* Comic_Book_Italic.otf */ = {isa = PBXFileReference; name = "Comic_Book_Italic.otf"; path = "../app/assets/font/Comic_Book_Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8FC3FBC582AB495BA19A82E6 /* BootSplash.storyboard */ = {isa = PBXFileReference; name = "BootSplash.storyboard"; path = "mini_ticket_app/BootSplash.storyboard"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EB9E50BAAA744EB185C76C50 /* Colors.xcassets */ = {isa = PBXFileReference; name = "Colors.xcassets"; path = "mini_ticket_app/Colors.xcassets"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = folder.assetcatalog; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				8FC3FBC582AB495BA19A82E6 /* BootSplash.storyboard */,
+				EB9E50BAAA744EB185C76C50 /* Colors.xcassets */,
 			);
 			name = mini_ticket_app;
 			sourceTree = "<group>";
@@ -270,6 +276,8 @@
 				3E98124B20DD45E3A29F8BF0 /* Comic_Book_Bold.otf in Resources */,
 				85FDCE614F534CDEB57468AA /* Comic_Book_Bold_Italic.otf in Resources */,
 				52036FDE3AA242B99B0073B8 /* Comic_Book_Italic.otf in Resources */,
+				2AEE9BEDE3C94D6C9F60B624 /* BootSplash.storyboard in Resources */,
+				B0F3F07CD5084CE6BD1A2F71 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

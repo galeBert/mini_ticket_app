@@ -13,7 +13,7 @@ import {InputFieldProps} from '../types/type';
 
 const InputField = ({
   label,
-  icon,
+  rightIcon: Icon,
   secureTextEntry = false,
   labelStyle,
   containerStyle,
@@ -35,6 +35,7 @@ const InputField = ({
               secureTextEntry={secureTextEntry}
               {...props}
             />
+            {Icon && <Icon />}
           </View>
           {errorMessage && (
             <View className="flex flex-row items-center space-x-1">

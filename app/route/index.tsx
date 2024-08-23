@@ -8,17 +8,18 @@ import SignUp from '../pages/unauth/sign-up';
 import DetailPage from '../pages/authenticated/detail';
 import CustomHeader from '../components/custom-header';
 import ComicText from '../components/comic-book';
-import {icons} from '../constant';
+import {icons, posts} from '../constant';
+import QrScannerPage from '../components/qr-scanner';
 
 export type RootStackParamList = {
   home: undefined;
-  detail: {postId: string; title: string};
+  detail: {postId: string};
+  qr: undefined;
   signIn: undefined;
   signUp: undefined;
-  // profile: {userId: string};
-  // Feed: {sort: 'latest' | 'top'} | undefined;
 };
 export default function Route() {
+  const {logout} = useAuth();
   const Stack = createNativeStackNavigator<RootStackParamList>();
   const {isLoggedIn, isLoading} = useAuth();
 
@@ -37,7 +38,7 @@ export default function Route() {
             name="home"
             component={Home}
             options={{
-              header: () => (
+              header: ({navigation}) => (
                 <CustomHeader
                   style={{
                     display: 'flex',
@@ -46,11 +47,12 @@ export default function Route() {
                     alignItems: 'center',
                   }}>
                   <ComicText
+                    onPress={() => logout()}
                     variant="bold"
                     className="text-[22px] text-primary-text leading-[26px]">
                     Home Of Events
                   </ComicText>
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={() => navigation.navigate('qr')}>
                     <Image
                       source={icons.qRIcon}
                       className="w-6 h-6"
@@ -66,8 +68,8 @@ export default function Route() {
             component={DetailPage}
             options={{
               header: ({navigation, route}) => {
-                const {title} = route.params as any;
-
+                const {postId} = route.params as any;
+                const title = posts.find(data => data.id === postId);
                 return (
                   <CustomHeader
                     style={{
@@ -88,11 +90,19 @@ export default function Route() {
                       numberOfLines={1}
                       variant="bold"
                       className="text-[22px] text-left text-primary-text leading-[26px]">
-                      {title}
+                      {title?.title ?? 'Not Found'}
                     </ComicText>
                   </CustomHeader>
                 );
               },
+            }}
+          />
+          <Stack.Screen
+            name="qr"
+            component={QrScannerPage}
+            options={{
+              title: 'Scan Ticket Here',
+              headerTitleStyle: {fontFamily: 'Comic_Book'},
             }}
           />
         </>

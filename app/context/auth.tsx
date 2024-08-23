@@ -18,6 +18,13 @@ interface AuthState {
     email: string;
     password: string;
   }) => Promise<Response>;
+  register: ({
+    email,
+    password,
+  }: {
+    email: string;
+    password: string;
+  }) => Promise<Response>;
   logout: () => Promise<void>;
   isLoading: boolean;
 }
@@ -71,6 +78,43 @@ const AuthProvider = ({children}: {children: ReactNode}) => {
       return response;
     }
   };
+  const register = async ({
+    email,
+    password,
+  }: {
+    email: string;
+    password: string;
+  }) => {
+    try {
+      const findUser = users.find(user => user.email === email);
+      console.log(findUser);
+
+      if (findUser) {
+        throw new Error(
+          JSON.stringify({message: 'Email sudah terdaftar', field: 'email'}),
+        );
+      } else {
+        users.push({email, password});
+        await AsyncStorage.setItem('isLoggedIn', 'true');
+        setisLoggedIn(true);
+        const response = new Response(JSON.stringify({data: findUser}), {
+          status: 200,
+        });
+        return response;
+      }
+    } catch (err) {
+      const error = err as unknown as Error;
+      console.log('REGISTER_ERROR', err);
+
+      const response = new Response(
+        JSON.stringify({data: null, message: JSON.parse(error.message)}),
+        {
+          status: 400,
+        },
+      );
+      return response;
+    }
+  };
   const logout = async () => {
     try {
       setisLoggedIn(false);
@@ -103,7 +147,7 @@ const AuthProvider = ({children}: {children: ReactNode}) => {
   }, []);
 
   const value = useMemo(
-    () => ({isLoggedIn, isLoading, login, logout}),
+    () => ({isLoggedIn, isLoading, login, logout, register}),
     [isLoggedIn, isLoading, login, logout],
   );
 

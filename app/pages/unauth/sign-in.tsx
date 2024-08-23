@@ -12,16 +12,19 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import ComicText from '../../components/comic-book';
 import InputField from '../../components/input-field';
 import Button from '../../components/button';
-import {Link} from '@react-navigation/native';
 import {icons} from '../../constant';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../route';
 
-export default function SignIn() {
+type Props = NativeStackScreenProps<RootStackParamList, 'signIn'>;
+
+export default function SignIn({navigation}: Props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<{message: string; field: string}>();
 
   const {login} = useAuth();
-  console.log({error});
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -54,10 +57,22 @@ export default function SignIn() {
                 <InputField
                   onChangeText={text => setPassword(text)}
                   placeholder="Password"
-                  secureTextEntry
+                  secureTextEntry={!showPassword}
                   errorMessage={
                     error?.field === 'password' ? error.message : undefined
                   }
+                  rightIcon={() => {
+                    return (
+                      <TouchableOpacity
+                        onPress={() => setShowPassword(prev => !prev)}>
+                        <Image
+                          className="w-6 h-6"
+                          source={showPassword ? icons.eyeOn : icons.eyeOff}
+                          resizeMode="contain"
+                        />
+                      </TouchableOpacity>
+                    );
+                  }}
                 />
               </View>
               <View className="flex w-full items-end">
@@ -91,16 +106,17 @@ export default function SignIn() {
                   }}
                   title="Masuk"
                 />
-                <Link
-                  className="text-lg text-center w-full text-general-200 mt-10"
-                  to="/signUp">
+                <View className="text-lg text-center w-full justify-center text-general-200 flex flex-row mt-10">
                   <Text className="text-sm text-neutral-500 font-normal">
                     Belum punya akun?{' '}
                   </Text>
-                  <Text className="text-sm text-green-500 font-medium">
-                    Buat Akun
-                  </Text>
-                </Link>
+                  <TouchableOpacity
+                    onPress={() => navigation.navigate('signUp')}>
+                    <Text className="text-sm text-green-500 font-medium">
+                      Buat Akun
+                    </Text>
+                  </TouchableOpacity>
+                </View>
               </View>
               {/* separator */}
               <View className="flex flex-row justify-center items-center gap-x-3">

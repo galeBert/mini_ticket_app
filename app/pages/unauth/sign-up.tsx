@@ -4,18 +4,26 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   Image,
+  TouchableOpacity,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {useAuth} from '../../context/auth';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import ComicText from '../../components/comic-book';
 import InputField from '../../components/input-field';
 import Button from '../../components/button';
-import {Link} from '@react-navigation/native';
 import {icons} from '../../constant';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../route';
 
-export default function SignUp() {
-  const {login} = useAuth();
+type Props = NativeStackScreenProps<RootStackParamList, 'signUp'>;
+
+export default function SignUp({navigation}: Props) {
+  const {register} = useAuth();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState<{message: string; field: string}>();
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -36,10 +44,34 @@ export default function SignUp() {
             {/* input container */}
             <View className="flex flex-col space-y-3">
               <View>
-                <InputField placeholder="E-mail" />
+                <InputField
+                  placeholder="E-mail"
+                  keyboardType="email-address"
+                  textContentType="emailAddress"
+                  errorMessage={
+                    error?.field === 'email' ? error.message : undefined
+                  }
+                  onChangeText={text => setEmail(text)}
+                />
               </View>
               <View>
-                <InputField placeholder="Password" secureTextEntry />
+                <InputField
+                  onChangeText={text => setPassword(text)}
+                  placeholder="Password"
+                  secureTextEntry={!showPassword}
+                  rightIcon={() => {
+                    return (
+                      <TouchableOpacity
+                        onPress={() => setShowPassword(prev => !prev)}>
+                        <Image
+                          className="w-6 h-6"
+                          source={showPassword ? icons.eyeOn : icons.eyeOff}
+                          resizeMode="contain"
+                        />
+                      </TouchableOpacity>
+                    );
+                  }}
+                />
               </View>
               <View className="flex w-full items-end"></View>
             </View>
@@ -47,17 +79,36 @@ export default function SignUp() {
             <View className="flex flex-col space-y-4">
               {/* button container */}
               <View className="space-y-3 flex flex-col items-center">
-                <Button className="w-full" disabled title="Masuk" />
-                <Link
-                  className="text-lg text-center w-full text-general-200 mt-10"
-                  to="/signIn">
+                <Button
+                  className="w-full"
+                  disabled={!email.length || !password.length}
+                  title="Daftar"
+                  onPress={async () => {
+                    try {
+                      const res = await register({email, password});
+                      if (!res.ok) {
+                        const errorData = await res.json();
+                        setError({
+                          message: errorData?.message.message,
+                          field: errorData.message.field,
+                        });
+                      }
+                    } catch (err) {
+                      console.log(err);
+                    }
+                  }}
+                />
+                <View className="text-lg text-center flex-row flex justify-center w-full text-general-200 mt-10">
                   <Text className="text-sm text-neutral-500 font-normal">
                     Sudah punya akun?{' '}
                   </Text>
-                  <Text className="text-sm text-green-500 font-medium">
-                    Masuk Akun
-                  </Text>
-                </Link>
+                  <TouchableOpacity
+                    onPress={() => navigation.navigate('signIn')}>
+                    <Text className="text-sm text-green-500 font-medium">
+                      Buat Akun
+                    </Text>
+                  </TouchableOpacity>
+                </View>
               </View>
               {/* separator */}
               <View className="flex flex-row justify-center items-center gap-x-3">
