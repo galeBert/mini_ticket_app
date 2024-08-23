@@ -26,12 +26,12 @@ export default function QrScannerPage() {
       <QRCodeScanner
         reactivate
         showMarker
-        reactivateTimeout={1000}
+        reactivateTimeout={2000}
         onRead={data => {
           if (!isModalOpen) {
             if (data.data) {
               if (data.data.includes('miniticket://app')) {
-                Linking.openURL('miniticket://app/detail/7').catch(e => {
+                Linking.openURL(data.data).catch(e => {
                   console.log(e);
                 });
               } else {
