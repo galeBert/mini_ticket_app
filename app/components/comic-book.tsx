@@ -4,7 +4,6 @@ import React from 'react';
 
 type ComicBookVariant = 'base' | 'bold' | 'italic' | 'bold-italic';
 interface ComicTextProps extends TextProps {
-  children: string | number;
   variant?: ComicBookVariant;
 }
 const getComicTextVariantStyle = (variant: ComicBookVariant) => {
@@ -21,7 +20,6 @@ const getComicTextVariantStyle = (variant: ComicBookVariant) => {
 };
 
 export default function ComicText({
-  children,
   variant = 'base',
   style,
   ...rest
@@ -32,8 +30,7 @@ export default function ComicText({
         {fontFamily: getComicTextVariantStyle(variant)},
         style && StyleSheet.flatten(style),
       ]}
-      {...rest}>
-      {String(children)}
-    </Text>
+      {...rest}
+    />
   );
 }

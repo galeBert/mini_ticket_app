@@ -14,6 +14,7 @@ import {icons} from '../constant';
 import {FlashlightIcon, FlashlightOff, X} from 'lucide-react-native';
 import ReactNativeModal from 'react-native-modal';
 import Button from './button';
+import InterText from './inter-text';
 
 export default function QrScannerPage() {
   const [isFlashOn, setisFlashOn] = useState(false);
@@ -47,9 +48,9 @@ export default function QrScannerPage() {
         }
         topContent={
           <View>
-            <Text className="text-primary-text text-lg">
-              Helo, Please Scan you ticket Here!
-            </Text>
+            <InterText className="text-primary-text text-lg">
+              Helo, Please Scan your ticket Here!
+            </InterText>
           </View>
         }
         bottomContent={
@@ -65,7 +66,9 @@ export default function QrScannerPage() {
                 <FlashlightOff color="white" size={24} />
               )}
             </TouchableOpacity>
-            <Text className="mt-1">Flash {isFlashOn ? 'on' : 'off'}</Text>
+            <InterText className="mt-1">
+              Flash {isFlashOn ? 'on' : 'off'}
+            </InterText>
           </View>
         }
       />
@@ -74,9 +77,9 @@ export default function QrScannerPage() {
           <View className="rounded-full w-[100px] h-[100px] flex justify-center items-center p-3 bg-red-100">
             <X size={50} color="white" className="" />
           </View>
-          <Text className="text-xl font-JakartaBold text-center">
+          <InterText className="text-xl font-JakartaBold text-center">
             Wrong QR Please Try Again!
-          </Text>
+          </InterText>
           <Button
             className="!bg-black"
             title="OK"

@@ -1,7 +1,6 @@
 import {
   TextInput,
   View,
-  Text,
   Image,
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
@@ -10,6 +9,7 @@ import {
 } from 'react-native';
 import {icons} from '../constant';
 import {InputFieldProps} from '../types/type';
+import InterText from './inter-text';
 
 const InputField = ({
   label,
@@ -44,7 +44,9 @@ const InputField = ({
                 source={icons.alertCircle}
                 resizeMode="contain"
               />
-              <Text className="text-sm text-red-100">{errorMessage}</Text>
+              <InterText className="text-sm text-red-100">
+                {errorMessage}
+              </InterText>
             </View>
           )}
         </View>

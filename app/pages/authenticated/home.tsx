@@ -1,6 +1,5 @@
-import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
+import {FlatList} from 'react-native';
 import React from 'react';
-import {useAuth} from '../../context/auth';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {posts} from '../../constant';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
@@ -9,8 +8,6 @@ import Card from '../../components/card';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'home'>;
 export default function Home({navigation}: Props) {
-  const {logout} = useAuth();
-
   return (
     <SafeAreaView className="bg-white">
       <FlatList

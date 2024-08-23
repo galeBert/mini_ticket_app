@@ -1,6 +1,7 @@
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, TouchableOpacity, Image} from 'react-native';
 import React from 'react';
 import {Post} from '../types/type';
+import InterText from './inter-text';
 
 export default function Card({
   data,
@@ -23,7 +24,7 @@ export default function Card({
         source={data.image}
       />
       <View>
-        <Text
+        <InterText
           className={`
           text-base text-primary-text
           ${
@@ -33,8 +34,8 @@ export default function Card({
           }
           `}>
           {data.title}
-        </Text>
-        <Text>{data.date}</Text>
+        </InterText>
+        <InterText>{data.date}</InterText>
       </View>
     </TouchableOpacity>
   );

@@ -16,6 +16,14 @@
     {
       "path": "app/assets/font/Comic_Book_Italic.otf",
       "sha1": "98ab6f780c29dcae4324fa3f007c495cb0a3906d"
+    },
+    {
+      "path": "app/assets/font/Inter.ttf",
+      "sha1": "ee5c2e22ffeddefc433c9aa4c76779bb73a5c682"
+    },
+    {
+      "path": "app/assets/font/Inter_Italic.ttf",
+      "sha1": "81cca19cd01dbcfea3826e02cc1491ff7423c2b1"
     }
   ]
 }

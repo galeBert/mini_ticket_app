@@ -15,6 +15,7 @@ import Button from '../../components/button';
 import {icons} from '../../constant';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../route';
+import InterText from '../../components/inter-text';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'signUp'>;
 
@@ -35,9 +36,9 @@ export default function SignUp({navigation}: Props) {
           {/* title container */}
           <View className="mt-20 space-y-2">
             <ComicText className="text-heading-xl text-black">Daftar</ComicText>
-            <Text className="text-[16px] font-medium text-neutral-500">
+            <InterText className="text-[16px] font-medium text-neutral-500">
               Selamat datang!
-            </Text>
+            </InterText>
           </View>
           {/* body container */}
           <View className="flex flex-col  space-y-5">
@@ -99,21 +100,21 @@ export default function SignUp({navigation}: Props) {
                   }}
                 />
                 <View className="text-lg text-center flex-row flex justify-center w-full text-general-200 mt-10">
-                  <Text className="text-sm text-neutral-500 font-normal">
+                  <InterText className="text-sm text-neutral-500 font-normal">
                     Sudah punya akun?{' '}
-                  </Text>
+                  </InterText>
                   <TouchableOpacity
                     onPress={() => navigation.navigate('signIn')}>
-                    <Text className="text-sm text-green-500 font-medium">
+                    <InterText className="text-sm text-green-500 font-medium">
                       Buat Akun
-                    </Text>
+                    </InterText>
                   </TouchableOpacity>
                 </View>
               </View>
               {/* separator */}
               <View className="flex flex-row justify-center items-center gap-x-3">
                 <View className="flex-1 h-[1px] bg-[#8F9092]" />
-                <Text className="text-sm text-[#8F9092]">atau</Text>
+                <InterText className="text-sm text-[#8F9092]">atau</InterText>
                 <View className="flex-1 h-[1px] bg-[#8F9092]" />
               </View>
               <View>
@@ -136,9 +137,9 @@ export default function SignUp({navigation}: Props) {
           </View>
         </SafeAreaView>
         <View className="w-full absolute bottom-16">
-          <Text className="text-center text-base text-green-500 underline font-bold">
+          <InterText className="text-center text-base text-green-500 underline font-bold">
             Lewati, langsung lihat daftar komik
-          </Text>
+          </InterText>
         </View>
       </View>
     </TouchableWithoutFeedback>

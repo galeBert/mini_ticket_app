@@ -1,7 +1,7 @@
-import {Image, Text, TouchableOpacity} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import React from 'react';
 import {ButtonProps} from '../types/type';
-
+import InterText from '../components/inter-text';
 const getTextVariantStyle = (variant: ButtonProps['textVariant']) => {
   switch (variant) {
     case 'sm':
@@ -41,14 +41,14 @@ export default function Button({
       onPress={onPress}
       {...rest}>
       {Icon && <Icon />}
-      <Text
+      <InterText
         className={`
        text-[#F8F8F8] font-medium
        ${getTextVariantStyle(textVariant)}
       ${bgVariant === 'outline' ? 'text-primary-text' : ''}
       `}>
         {title}
-      </Text>
+      </InterText>
     </TouchableOpacity>
   );
 }

@@ -20,6 +20,8 @@
 		52036FDE3AA242B99B0073B8 /* Comic_Book_Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 375AA57EC0FB4D42834D65A2 /* Comic_Book_Italic.otf */; };
 		2AEE9BEDE3C94D6C9F60B624 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FC3FBC582AB495BA19A82E6 /* BootSplash.storyboard */; };
 		B0F3F07CD5084CE6BD1A2F71 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB9E50BAAA744EB185C76C50 /* Colors.xcassets */; };
+		71A81922021A486290E3CFA2 /* Inter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16364DE5387C4C4E9C0ABF3C /* Inter.ttf */; };
+		AADD3CD8E1FC4E73ADF12A2A /* Inter_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 037F787768A64E7EA1DD19EA /* Inter_Italic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		375AA57EC0FB4D42834D65A2 /* Comic_Book_Italic.otf */ = {isa = PBXFileReference; name = "Comic_Book_Italic.otf"; path = "../app/assets/font/Comic_Book_Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		8FC3FBC582AB495BA19A82E6 /* BootSplash.storyboard */ = {isa = PBXFileReference; name = "BootSplash.storyboard"; path = "mini_ticket_app/BootSplash.storyboard"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		EB9E50BAAA744EB185C76C50 /* Colors.xcassets */ = {isa = PBXFileReference; name = "Colors.xcassets"; path = "mini_ticket_app/Colors.xcassets"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = folder.assetcatalog; explicitFileType = undefined; includeInIndex = 0; };
+		16364DE5387C4C4E9C0ABF3C /* Inter.ttf */ = {isa = PBXFileReference; name = "Inter.ttf"; path = "../app/assets/font/Inter.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		037F787768A64E7EA1DD19EA /* Inter_Italic.ttf */ = {isa = PBXFileReference; name = "Inter_Italic.ttf"; path = "../app/assets/font/Inter_Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,8 @@
 				E643FAEFE80B449687EBE4D3 /* Comic_Book_Bold.otf */,
 				D9CE1B9AE8E949E783E7E7DC /* Comic_Book_Bold_Italic.otf */,
 				375AA57EC0FB4D42834D65A2 /* Comic_Book_Italic.otf */,
+				16364DE5387C4C4E9C0ABF3C /* Inter.ttf */,
+				037F787768A64E7EA1DD19EA /* Inter_Italic.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -278,6 +284,8 @@
 				52036FDE3AA242B99B0073B8 /* Comic_Book_Italic.otf in Resources */,
 				2AEE9BEDE3C94D6C9F60B624 /* BootSplash.storyboard in Resources */,
 				B0F3F07CD5084CE6BD1A2F71 /* Colors.xcassets in Resources */,
+				71A81922021A486290E3CFA2 /* Inter.ttf in Resources */,
+				AADD3CD8E1FC4E73ADF12A2A /* Inter_Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

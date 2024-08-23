@@ -1,12 +1,5 @@
-import {
-  View,
-  TouchableOpacity,
-  Image,
-  ViewProps,
-  StyleSheet,
-} from 'react-native';
+import {View, ViewProps, StyleSheet} from 'react-native';
 import React, {ReactNode} from 'react';
-import {styled} from 'nativewind';
 
 interface CustomHeaderProps extends ViewProps {
   children: ReactNode;
