@@ -78,7 +78,7 @@ export const users = [
 ```
 
 you can use that user to test login functionality user will stay logged in when the screen is reloaded because I use Async storage to handle a "session-like" feeling,
-# note
+# note for Logout
 to logout please tap home page header title (I didn't add an implicit logout since the rule is to try to strictly follow the [Figma Design]([https://reactnative.dev/docs/integration-with-existing-apps](https://www.figma.com/design/wmaD2QKI0MjIDpwuKPX4MJ/Test-Developer?node-id=0-1&t=RPOaLYNyD0OIdVJp-0)))
 
 # You can try several login tests
