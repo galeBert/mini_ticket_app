@@ -94,7 +94,7 @@ to logout please tap home page header title (I didn't add an implicit logout sin
 ### Try QR scaning
 to try a QR feature I have provide 3 QR that can be tested
 
-# Here is the valid QR for  open ticket posts with ID: 3
+### Here is the valid QR for  open ticket posts with ID: 3
 <img width="339" alt="qr-valid-id-3" src="https://github.com/user-attachments/assets/ed13e9bb-c60d-475c-9d88-0bdf62dca9de">
 
 ### Here is the valid QR for  open ticket posts with ID: 1
