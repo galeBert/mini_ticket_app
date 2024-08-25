@@ -97,33 +97,33 @@ to try a QR feature I have provide 3 QR that can be tested
 # Here is the valid QR for  open ticket posts with ID: 3
 <img width="339" alt="qr-valid-id-3" src="https://github.com/user-attachments/assets/ed13e9bb-c60d-475c-9d88-0bdf62dca9de">
 
-# Here is the valid QR for  open ticket posts with ID: 1
+### Here is the valid QR for  open ticket posts with ID: 1
 
 <img width="351" alt="qr-valid-id-1" src="https://github.com/user-attachments/assets/29bd9f78-822c-4e2b-bb1e-34f102d68837">
 
-# Here is the invalid QR that contains a link to YouTube, but it will open an error modal instead of opening using our app
+### Here is the invalid QR that contains a link to YouTube, but it will open an error modal instead of opening using our app
 
 <img width="336" alt="qr-invalid-youtube" src="https://github.com/user-attachments/assets/1eadc8e5-57b6-4653-8750-3dbb08075a2c">
 
-# Here is the invalid QR for  open ticket posts with id: 7 but will return Not Found instead
+### Here is the invalid QR for  open ticket posts with id: 7 but will return Not Found instead
 
 <img width="343" alt="qr-invalid-id-7" src="https://github.com/user-attachments/assets/4cbafe87-b2da-40c3-9a2c-59fd7d5449c4">
 
 
-#note: all QR provided generated with https://www.qrcode-monkey.com/
+### note: all QR provided generated with https://www.qrcode-monkey.com/
 
-### Design Choices
+## Design Choices
 
 for the design I use in the QR scanner page, I'm using a simple and minimal approach but yet with informative text and a helper
 the reason is that a feature like QR cannot have a too crowded UI or color because it will distract the user and make the user experience bad, since the UI mostly is only the camera which means a user needs to focus looks what showing on the camera instead of what the UI, and using a readable color like red for error so the user doesn't really need to read the text, but when only see the color user will know its an error
 
-### Challenges
+## Challenges
 
 the real thing about this project is to try to adapt with bare react native (react-native-cli) unlike expo this bare react makes me need to read a lot of docs, and it sure does take some time,  but after all, since this is React I can get used to with it by times
 
 the other challenge I faced was with bare react native made me can't use react-expo to debug the app, This meant I had to go back to using the Android studio VM simulator, and it was so heavy and means slowed the debug process, but after everything went well 
 
-# Note
+### Note
 thanks to the Visi8 team for giving me this challenge it's so much fun in the process of making it, and also I learned alot and made me realize react native is exciting I think I will keep practicing using react native, I hope this assignment can help the Visi8 team see skill the potential I have, and let grow together
 
 ### Now what?
