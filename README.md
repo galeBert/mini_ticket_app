@@ -62,8 +62,11 @@ You've successfully run and modified your React Native App. :partying_face:
 ### Testing User Login
 
 I have provide 2 harcoded user in 
+<details>
+<summary>/app/constant/index</summary>
+<br>
 ```bash
-/app/constant/index
+
 
 export const users = [
   {
@@ -76,6 +79,8 @@ export const users = [
   },
 ];
 ```
+</details>
+
 
 you can use that user to test login functionality user will stay logged in when the screen is reloaded because I use Async storage to handle a "session-like" feeling,
 # note for Logout
