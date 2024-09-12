@@ -66,8 +66,6 @@ I have provide 2 harcoded user in
 <summary>/app/constant/index</summary>
 <br>
 ```bash
-
-
 export const users = [
   {
     email: 'visi8@example.com',
@@ -80,7 +78,6 @@ export const users = [
 ];
 ```
 </details>
-
 
 you can use that user to test login functionality user will stay logged in when the screen is reloaded because I use Async storage to handle a "session-like" feeling,
 # note for Logout
