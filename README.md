@@ -64,7 +64,7 @@ You've successfully run and modified your React Native App. :partying_face:
 I have provide 2 harcoded user in 
 <details>
 <summary>/app/constant/index</summary>
-<br>
+
 ```bash
 export const users = [
   {
